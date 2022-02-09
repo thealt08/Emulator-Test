@@ -1,0 +1,849 @@
+
+<body>
+  <title>Plexer Streaming Service</title>
+    <header class="header">
+        <div class="container">
+            <div class="logo" >Plexer</div>
+            <nav class="menu">
+                <a href="#Movies">
+                    <svg fill="#FFFFFF" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                        <path d="M4 6.47L5.76 10H20v8H4V6.47M22 4h-4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4z"/>
+                        </svg>
+                    Movies
+                </a>
+
+                <a href="#SubtitlesMovies">
+                    <svg fill="#FFFFFF" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm-6-4h8v2h-8z"/>
+                        </svg>
+                    Subtitled Movies
+                </a>
+                <a href="contact.html">
+                    <svg fill="#FFFFFF" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                        <path d="M12 1.95c-5.52 0-10 4.48-10 10s4.48 10 10 10h5v-2h-5c-4.34 0-8-3.66-8-8s3.66-8 8-8 8 3.66 8 8v1.43c0 .79-.71 1.57-1.5 1.57s-1.5-.78-1.5-1.57v-1.43c0-2.76-2.24-5-5-5s-5 2.24-5 5 2.24 5 5 5c1.38 0 2.64-.56 3.54-1.47.65.89 1.77 1.47 2.96 1.47 1.97 0 3.5-1.6 3.5-3.57v-1.43c0-5.52-4.48-10-10-10zm0 13c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
+                        </svg>
+                        Contact
+                </a>
+                <a href="pricing.html">
+                    <svg fill="#FFFFFF" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                        <path d="M12 1.95c-5.52 0-10 4.48-10 10s4.48 10 10 10h5v-2h-5c-4.34 0-8-3.66-8-8s3.66-8 8-8 8 3.66 8 8v1.43c0 .79-.71 1.57-1.5 1.57s-1.5-.78-1.5-1.57v-1.43c0-2.76-2.24-5-5-5s-5 2.24-5 5 2.24 5 5 5c1.38 0 2.64-.56 3.54-1.47.65.89 1.77 1.47 2.96 1.47 1.97 0 3.5-1.6 3.5-3.57v-1.43c0-5.52-4.48-10-10-10zm0 13c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
+                        </svg>
+                        Buy Credits and memberships
+                </a>
+            </nav>
+             <svg fill="#FFFFFF" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <h3>Credits: <span id='credits'>0</span></h3>
+                </a>
+              <button onclick='save()'>Load credits</button>
+            </nav>
+            </nav>
+            <a href ="login.html">
+            <div class="user-actions">
+                <div class="signin">Sign in</div>
+            </div>
+                <label class="openmenu">
+                    <svg fill="#FFFFFF" width="32" height="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0V0z" fill="none"/>
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </label>
+        </div>
+    </header>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.0/socket.io.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3353530963093298"
+     crossorigin="anonymous"></script>
+
+<script>
+var timerID = setInterval(function() {
+    	localStorage.setItem("credits",alltimeCredits)
+}, 5 * 1000); 
+
+clearInterval(timerID); // The setInterval it cleared and doesn't run anymore.
+function save() {
+	localStorage.setItem("credits",alltimeCredits)
+}
+  var credits = 0;
+  var alltimeCredits = 0;
+  </script>
+<style>
+  h3 {
+    color: white;
+  }
+  </style>
+<script src="script.js"></script>
+
+
+
+
+<div class="recommended-movie">
+  <a href="Movies/freeguy/freeguy.html">   
+     <div class="container" onclick="link2()" style="background-image: url(Imgs/freeguy/freeguybanner.png);">
+         <div class="desc">
+            <div class="title">FreeGuy</div>     
+              <div class="about">2021 ‧ Sci-Fi/Action ‧ 1h 49m</div>
+        </div>
+    </div>
+</div>
+</a>
+<div class="movie-types">
+ <div class="container">
+      <h5>Action-Adventure Movies <a href="comingsoon.html">All<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" fill="rgba(255,255,255,1)"/></svg></a></h5>
+    <div class="wrapper">
+<a href="Movies/freeguy/freeguy.html">               
+  <div class="movie" style="background-image: url(Imgs/freeguy/freeguy.png)"></div>
+<a href="Movies/Marvel/Spiderman/farfromhome.html">  
+  <div class="movie" style="background-image: url(Imgs/Spiderman/farfromhome.jpg)"></div>
+<a href="Movies/rpo/rpo.html"> 
+<div class="movie" style="background-image: url(Imgs/RPO/rpo.png)"></div>
+<a href="Movies/Marvel/Spiderman/homecoming.html"> 
+<div class="movie" style="background-image: url(Imgs/Spiderman/spidermanhc.png)"></div>
+<a href="Movies/pokemon/dp.html"> 
+<div class="movie" style="background-image: url(Imgs/pokemon/dp.png)"></div>
+<a href="ESQ.html"> 
+    </div>
+  </div>
+</div>
+    <div class="movie-types">
+        <div class="container">
+            <h5>Show<a href="comingsoon.html">All<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" fill="rgba(255,255,255,1)"/></svg></a></h5>
+            <div class="wrapper">
+              <a href="Movies/squidgame/ESQ.html">   
+                <div class="movie" style="background-image: url(Imgs/squidgame/squidgame.png)"></div>
+            </div>
+        </div>
+    </div></a>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+
+
+:root {
+    --primary-color: #f34c55;
+    --secondary-color: #171d22;
+    --backdrop-color: #000;
+}
+.options button {
+	font-size: 15px;
+	color: white;
+	height: 30px;
+	margin: 10px auto;
+	border: 3px solid rgb(104, 104, 214);
+	background-color: rgba(0,0,0,0);
+	border-radius: 2px;
+	transition: .1s;
+}
+body {
+    background-color: #171d22;
+}
+.header {
+    width: 100%;
+    height: 85px;
+    background-color: var(--secondary-color);
+    position: relative;
+}
+
+.header .container {
+    width: 1200px;
+    height: 85px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.header .container .logo {
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.header .container   label{
+    width: 32px;
+    height: 32px;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
+.header .container .menu {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1px;
+}
+
+.header .container .menu a {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    margin-right: 35px;
+    transition: 150ms color ease-in-out;
+}
+.header .container .menu a svg {
+    margin-bottom: 5px;
+}
+
+.header .container .menu a:hover {
+    color:  var(--primary-color);
+}
+.header .container .menu a svg {
+    transition: 150ms fill ease-in-out;
+}
+
+.header .container .menu a:hover svg {
+    fill: var(--primary-color)!important;
+}
+.header .container  .user-actions .signin {
+    width: 120px;
+    height: 45px;
+    background-color: #f34c55;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 200ms background-color ease-in-out;
+}
+.header .container  .user-actions .signin:hover {
+    background-color: #f34c54e1;
+}
+
+.receommended-movie{
+    width: 100%;
+    height: 515px;
+    position: relative;
+    margin-top: 15px;
+
+}
+
+.recommended-movie .container{
+    width: 1200px;
+    height: 500px;
+    position: relative;
+    background-color: #3d3c44;
+    margin: auto;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    cursor: pointer;
+    overflow: hidden;
+}
+.recommended-movie .container::before {
+    content: '';
+    width: 1200px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+
+}
+
+.recommended-movie .container .desc{
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    color: #fff!important;
+}
+
+.recommended-movie .container .desc .title{
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+.recommended-movie .container .desc .about{
+    font-size: 18px;
+}
+
+
+
+.movie-types {
+    width: 100%;
+    height: 416px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.movie-types .container {
+    width: 1200px;
+    height: 416px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-types .container h5 {
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-types .container h5 a {
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    opacity: .7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 100ms opacity ease-in-out;
+
+}
+
+.movie-types .container h5 a:hover {
+    opacity: 1;
+}
+
+.movie-types .container .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.movie-types .container .wrapper .movie{
+    width: 224px;
+    height: 336px;
+    background-color: #3d3c44;
+    border-radius: 10px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.movie-types .container .wrapper .movie::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #171d2275;
+    top: 0;
+    left: 0;
+    transition: 200ms opacity ease-in-out;
+    opacity: 0;
+}
+.movie-types .container .wrapper .movie:hover::before {
+    opacity: 1;
+}
+
+.footer {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 10px;
+
+}
+
+.footer .container {
+    width: 1200px;
+    height: 150px;
+    position: relative;
+    margin: auto;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 5px;
+}
+.footer .container .manmovi {
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: var(--primary-color); 
+
+}
+
+.footer .container .text {
+    margin-bottom: 10px;
+    font-size: 18.5px;
+    
+}
+
+
+.footer .container .dmca {
+    font-size: 17.6px;
+    padding-bottom: 30px;
+}
+.footer .container .dmca  b{
+    color: var(--primary-color);
+}
+.footer .container .dmca a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 30;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    visibility: hidden;
+    flex-direction: column;
+    transition: 200ms all;
+}
+
+.mobile-menu .menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mobile-menu .menu a {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 35px;
+}
+.mobile-menu .menu a:first-child {
+    margin-top: 0;
+}
+
+.mobile-menu .menu a svg {
+    margin-bottom: 5px;
+}
+
+.mobile-menu .menu a:hover {
+    color:  var(--primary-color);
+}
+.mobile-menu .menu a:hover svg {
+    fill: var(--primary-color)!important;
+}
+
+.mobile-menu .head {
+    width: 100%;
+    height: auto;
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 22px;
+    padding-left: 15px;
+    padding-right: 20px;
+    justify-content: space-between;
+
+}
+.mobile-menu  .user-actions .signin {
+    width: 120px;
+    height: 45px;
+    background-color: #f34c55;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 200ms background-color ease-in-out;
+    margin-bottom: 40px;
+}
+.mobile-menu  .user-actions .signin:hover {
+    background-color: #f34c54e1;
+}
+
+.mobile-menu .head label {
+    width: 32px;
+    height: 32px;
+    
+}
+@media only screen and (max-width: 1200px) {
+    .header .container {
+        width: 1000px;
+    }
+    .recommended-movie .container {
+        width: 1000px;
+    }
+    .movie-types .container {
+        width: 1000px;
+    }
+    .movie-types .container .wrapper .movie:nth-child(5) {
+        display: none;
+    }
+
+    .footer .container {
+        width: 1000px;
+    }
+  }
+
+
+  @media only screen and (max-width: 1000px) {
+    .header .container {
+        width: 800px;
+    }
+    .recommended-movie .container {
+        width: 800px;
+    }
+    .movie-types .container {
+        width: 800px;
+    }
+    .movie-types .container .wrapper .movie:nth-child(4) {
+        display: none;
+    }
+    .footer .container {
+        width: 800px;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .header .container {
+        width: 600px;
+    }
+
+    .header .container .menu {
+        display: none;
+    }
+    .header .container .user-actions {
+        display: none;
+    }
+    .header .container   label{
+        opacity: 1;
+        visibility: visible;
+        display: block;
+    }
+    .recommended-movie .container {
+        width: 600px;
+    }
+    .recommended-movie .container {
+        height: 450px;
+    }
+    .movie-types .container {
+        width: 600px;
+    }
+    .movie-types .container .wrapper  {
+        justify-content: space-around;
+    }
+    .movie-types .container .wrapper .movie:nth-child(3) {
+        display: none;
+    }
+    .footer .container {
+        width: 600px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .header .container {
+        width: 550px;
+    }
+
+    .header .container .menu {
+        display: none;
+    }
+    .recommended-movie .container {
+        width: 550px;
+    }
+    .recommended-movie .container {
+        height: 400px;
+    
+    }
+    .recommended-movie .container .desc .title {
+        font-size: 35px;
+    
+    }
+    .movie-types .container {
+        width: 550px;
+    }
+    .movie-types .container .wrapper  {
+        justify-content: space-around;
+    }
+    .movie-types .container .wrapper .movie:nth-child(3) {
+        display: none;
+    }
+    .footer .container {
+        width: 550px;
+    }
+  }
+
+
+  @media only screen and (max-width: 550px) {
+    .header .container {
+        width: 500px;
+    }
+
+    .header .container .menu {
+        display: none;
+    }
+    .recommended-movie .container {
+        width: 500px;
+    }
+    .recommended-movie .container {
+        height: 400px;
+    
+    }
+    .recommended-movie .container .desc  {
+        left: 40px;
+        bottom: 40px;
+    
+    }
+    .recommended-movie .container .desc .title {
+        font-size: 35px;
+    
+    }
+    .movie-types .container {
+        width: 500px;
+    }
+    .movie-types .container .wrapper  {
+        justify-content: space-around;
+    }
+    .movie-types .container .wrapper .movie:nth-child(3) {
+        display: none;
+    }
+    .footer .container {
+        width: 500px;
+    }
+  }
+
+
+  @media only screen and (max-width: 500px) {
+    .header .container {
+        width: 450px;
+    }
+
+    .header .container .menu {
+        display: none;
+    }
+    .recommended-movie .container {
+        width: 450px;
+    }
+    .recommended-movie .container {
+        height: 350px;
+    
+    }
+    .recommended-movie .container .desc  {
+        left: 40px;
+        bottom: 40px;
+    
+    }
+    .recommended-movie .container .desc .title {
+        font-size: 30px;
+    
+    }
+    .movie-types .container {
+        width: 450px;
+    }
+    .movie-types .container .wrapper  {
+        justify-content: space-between!important;
+    }
+    .movie-types .container .wrapper .movie {
+        width: 210px;
+        height: 320px;
+    }
+    .movie-types .container .wrapper .movie:nth-child(3) {
+        display: none;
+    }
+    .footer .container {
+        width: 450px;
+    }
+  }
+
+
+
+  @media only screen and (max-width: 450px) {
+    .header .container {
+        width: 400px;
+    }
+
+    .header .container .menu {
+        display: none;
+    }
+    .recommended-movie .container {
+        width: 400px;
+    }
+    .recommended-movie .container {
+        height: 300px;
+    
+    }
+    .recommended-movie .container .desc  {
+        left: 40px;
+        bottom: 40px;
+    
+    }
+    .recommended-movie .container .desc .title {
+        font-size: 30px;
+    
+    }
+    .movie-types .container {
+        width: 400px;
+    }
+    .movie-types .container .wrapper  {
+        justify-content: space-around;
+    }
+    .movie-types {
+        height: 380px;
+    }
+    .movie-types .container .wrapper .movie {
+        width: 190px;
+        height: 300px;
+    }
+    .movie-types .container .wrapper .movie:nth-child(3) {
+        display: none;
+    }
+    .footer .container {
+        width: 400px;
+    }
+  }
+
+
+
+  @media only screen and (max-width: 400px) {
+    .header .container {
+        width: 350px;
+    }
+
+    .header .container .menu {
+        display: none;
+    }
+    .recommended-movie .container {
+        width: 350px;
+    }
+    .recommended-movie .container {
+        height: 300px;
+    
+    }
+    .recommended-movie .container .desc  {
+        left: 30px;
+        bottom: 30px;
+    
+    }
+    .recommended-movie .container .desc .title {
+        font-size: 25px;
+    
+    }
+
+    .recommended-movie .container .desc .about {
+        font-size: 16px;
+    
+    }
+    .movie-types .container {
+        width: 350px;
+    }
+    .movie-types .container .wrapper  {
+        justify-content: space-around;
+    }
+    .movie-types {
+        height: 330px;
+    }
+    .movie-types .container h5 {
+        font-size: 20px;
+    }
+    .movie-types .container .wrapper .movie {
+        width: 170px;
+        height: 275px;
+    }
+    .movie-types .container .wrapper .movie:nth-child(3) {
+        display: none;
+    }
+
+    .footer .container {
+        width: 350px;
+    }
+  }
+
+
+  @media only screen and (max-width: 350px) {
+    .header .container {
+        width: 320px;
+    }
+
+    .header .container .menu {
+        display: none;
+    }
+    .recommended-movie .container {
+        width: 320px;
+    }
+    .recommended-movie .container {
+        height: 300px;
+    
+    }
+    .recommended-movie .container .desc  {
+        left: 30px;
+        bottom: 30px;
+    
+    }
+    .recommended-movie .container .desc .title {
+        font-size: 25px;
+    
+    }
+
+    .recommended-movie .container .desc .about {
+        font-size: 16px;
+    
+    }
+    .movie-types .container {
+        width: 320px;
+    }
+    .movie-types .container .wrapper  {
+        justify-content: space-around;
+    }
+    .movie-types {
+        height: 310px;
+    }
+    .movie-types .container h5 {
+        font-size: 18px;
+    }
+    .movie-types .container .wrapper .movie {
+        width: 155px;
+        height: 245px;
+    }
+    .movie-types .container .wrapper .movie:nth-child(3) {
+        display: none;
+    }
+    .footer .container {
+        width: 320px;
+    }
+  }
+  </style>
+<script>
+  var Credits = 0;
+  </script>
